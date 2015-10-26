@@ -1,0 +1,20 @@
+{% load staticfiles %}
+
+<head>
+	<link rel="stylesheet" type="text/css" href="{% static 'family/style.css' %}" />
+	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Cantarell" />
+	<title>Familias - Genealogy</title>
+</head>
+
+<body>
+<div class="titulo_seccion">Lista de familias registradas</div>
+{% if family_list %}
+    <ul>
+    {% for family in family_list %}
+        <li><a href="/family/{{ family.id }}/">Familia {{ family.family_name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No hay ninguna familia registrada.</p>
+{% endif %}
+</body>

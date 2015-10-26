@@ -1,0 +1,20 @@
+{% load staticfiles %}
+
+<head>
+	<link rel="stylesheet" type="text/css" href="{% static 'family/style.css' %}" />
+	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Cantarell" />
+	<title>Familia {{ family.family_name }} - Genealogy</title>
+</head>
+<body>
+<button type="submit">Nuevo</button>
+<h1 class="titulo_seccion">Miembros de la familia {{ family.family_name }}</h1>
+{% if members %}
+    <ul>
+    {% for famMember in members %}
+        <li><a href="/family/member/{{ famMember.id }}/"><p>{{ famMember.member_surname }}, {{ famMember.member_name }}</p></a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No hay ningún miembro registrado o dado de alta.</p>
+{% endif %}
+</body>

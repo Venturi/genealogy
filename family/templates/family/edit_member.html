@@ -1,0 +1,18 @@
+{% load staticfiles %}
+
+<head>
+	<title>Editando ficha de {{ member_data.member_name }} {{ member_data.member_surname }}</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'family/style.css' %}" />
+	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Cantarell" />
+</head>
+
+<h1>Editando ficha de {{ member_data.member_name }} {{ member_data.member_surname }}</h1>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form action="{% url 'member_data:member_data' member_data.id %}" method="post">
+
+{% csrf_token %}
+<p>{{ member_data.member_name }}. </p>
+<input type="submit" value="Guardar ficha" /><input type="cancel" value="Cancelar cambios"/>
+</form>

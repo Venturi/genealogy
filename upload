@@ -1,0 +1,8 @@
+if [ $# -lt 1 ]; then
+	echo "Debe pasar el texto del motivo del COMMIT!"
+	exit 1
+fi
+
+git add .
+git commit -m "$1"
+git push --set-upstream https://github.com/venturi/genealogy master
