@@ -1,8 +1,11 @@
 # -*- coding: utf-8 -*-
 from django.shortcuts import render,get_object_or_404
 
-# Create your views here.
+#Importamos nuestros modelos de datos
 from .models import Family, Member
+
+#Importando formularios
+from .forms import EditMember
 
 def index(request):
 	family_list = Family.objects.all
@@ -26,3 +29,12 @@ def editMember(request, mem_id):
 	member_data = get_object_or_404(Member, pk=mem_id)
 	context = {'member_data':member_data}
 	return render(request, 'family/edit_member.html',context)
+
+def get_name(request):
+	if request.method == 'POST':
+		form = EditMember(request.POST)
+		if form.is_valid():
+			return HttpResponseRedirect('/thanks/')
+	else:
+		form = EditMember()
+	return render(request, 'family/edit_member.html', {'form': form})

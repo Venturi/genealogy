@@ -13,6 +13,8 @@
 <form action="{% url 'family:family' member_data.id %}" method="post">
 
 {% csrf_token %}
-<p>{{ member_data.member_name }}. </p>
-<input type="submit" value="Guardar ficha" ><input type="button" onclick="location.href='/family/member/{{ member_data.id }}/'" value="Cancelar cambios">
+<label for="member_name">Nombre: </label>
+<input id="member_name" type="text" name="member_name" maxlength="100">
+
+<br><input type="submit" value="Guardar ficha" ><input type="button" onclick="location.href='/family/member/{{ member_data.id }}/'" value="Cancelar cambios">
 </form>
