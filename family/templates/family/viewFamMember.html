@@ -3,7 +3,7 @@
 <head>
 	<link rel="stylesheet" type="text/css" href="{% static 'family/style.css' %}" />
 	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Cantarell" />
-	<title>Ficha de {{ member_data.member_name }} {{ member_data.member_surname }} - Genealogy</title>
+	<title>{{ member_data.member_name }} {{ member_data.member_surname }} - Genealogy</title>
 </head>
 
 <body>
@@ -13,5 +13,5 @@
 <p><b>Nombre:</b> {{ member_data.member_name }}</p>
 <p><b>Fecha de Nacimiento:</b> {{ member_data.member_birth }}</p>
 <p><b>Sexo:</b> {{ member_data.member_sex }}</p>
-<input type="submit" href="/family/member/edit/{{ member_data.id }}" value="Editar {{ member_data.id }}"</input>
+<input type="submit" onclick="location.href='/family/member/edit/{{ member_data.id }}/'" value="Editar">
 </body>

@@ -10,9 +10,9 @@
 
 {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 
-<form action="{% url 'member_data:member_data' member_data.id %}" method="post">
+<form action="{% url 'family:family' member_data.id %}" method="post">
 
 {% csrf_token %}
 <p>{{ member_data.member_name }}. </p>
-<input type="submit" value="Guardar ficha" /><input type="cancel" value="Cancelar cambios"/>
+<input type="submit" value="Guardar ficha" ><input type="button" onclick="location.href='/family/member/{{ member_data.id }}/'" value="Cancelar cambios">
 </form>
