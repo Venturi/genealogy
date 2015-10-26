@@ -19,6 +19,7 @@ class Member(models.Model):
 	member_rip = models.DateField('rip_date',null=True,blank=True) #Fecha de defunción
 	member_profile_image = models.ImageField(null=True,blank=True) #Imagen de perfil del miembro de la familia
 	member_partner_id = models.IntegerField(default=0) #ID del cónyuge que sirve de enlace a una nueva familia
+	member_email = models.EmailField(null=True,blank=True) #Correo electrónico de contacto
 
 	def __str__(self):
 		return self.member_surname+", "+self.member_name
