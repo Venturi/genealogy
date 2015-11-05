@@ -6,7 +6,7 @@
 	<title>Familia {{ family.family_name }} - Genealogy</title>
 </head>
 <body>
-<button type="submit">Nuevo</button>
+<button onclick="location.href='/family/{{ family.id }}/member/add'" type="submit">Nuevo</button>
 <h1 class="titulo_seccion">Miembros de la familia {{ family.family_name }}</h1>
 {% if members %}
     <ul>

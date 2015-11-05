@@ -9,10 +9,12 @@ class Family(models.Model):
 
 	def __str__(self):
 		return "Familia "+self.family_name
+	def get_absolute_url(self):
+		return reverse('family-detail', kwargs={'pk': self.pk})
 
 class Member(models.Model):
 	member_family_id = models.ForeignKey(Family) #Clave ajena que une al miembro de la familia con su familia
-	member_name = models.CharField(max_length=100) #Nombre del miembro de la familia
+	member_name = models.CharField(max_length=100,label='Nombre') #Nombre del miembro de la familia
 	member_surname = models.CharField(max_length=100) #Apellido o Apellidos del miembro de la familia
 	member_sex = models.CharField(max_length=20) #Sexo del miembro de la familia
 	member_birth = models.DateField('birth_date') #Fecha de nacimiento
@@ -23,3 +25,5 @@ class Member(models.Model):
 
 	def __str__(self):
 		return self.member_surname+", "+self.member_name
+	def get_absolute_url(self):
+		return reverse('member-detail', kwargs={'pk': self.pk})

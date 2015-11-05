@@ -7,5 +7,9 @@
 </head>
 
 <h1>Editando ficha de {{ member_data.member_name }} {{ member_data.member_surname }}</h1>
-
+<form action="" method="post">
+	{{ MemberCreate }}
+</form>
 {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+

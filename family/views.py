@@ -4,8 +4,9 @@ from django.shortcuts import render,get_object_or_404
 #Importamos nuestros modelos de datos
 from .models import Family, Member
 
-#Importando formularios
-from .forms import EditMember
+#Forms
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.core.urlresolvers import reverse_lazy
 
 def index(request):
 	family_list = Family.objects.all
@@ -24,17 +25,17 @@ def reqMember(request, mem_id):
 	family_data = get_object_or_404(Family, pk=fam_id)
 	context = {'member_data':member_data,'family_data':family_data}
 	return render(request, 'family/viewFamMember.html',context)
-	
-def editMember(request, mem_id):
-	member_data = get_object_or_404(Member, pk=mem_id)
-	context = {'member_data':member_data}
-	return render(request, 'family/edit_member.html',context)
 
-def get_name(request):
-	if request.method == 'POST':
-		form = EditMember(request.POST)
-		if form.is_valid():
-			return HttpResponseRedirect('/thanks/')
-	else:
-		form = EditMember()
-	return render(request, 'family/edit_member.html', {'form': form})
+class MemberCreate(CreateView):
+	model = Member
+	template_name = 'family/create_member.html'
+	fields = ['member_name']
+
+class MemberUpdate(UpdateView):
+	model = Member
+	template_name = 'family/edit_member.html'
+	fields = '__all__'
+
+class MemberDelete(DeleteView):
+	model = Member
+	success_url = reverse_lazy('member-list')
