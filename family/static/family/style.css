@@ -5,10 +5,29 @@ body {
 	font-family: Cantarell;
 	width: 100%;
 	margin: 0;
+	background-image: url('./images/tree-sun.jpg');
+	background-position: top left;
+	background-attachment: fixed;
+	z-index: 0;
+}
+
+.button_form {
+	float: right;
+}
+
+input[type="button"],input[type="submit"] {
+	padding: 5px;
+	width: auto;
+	min-width: 100px;
+	font-weight: bold;
 }
 
 hr {
 	width: 100%;
+}
+
+.list_family {
+	text-align: center;
 }
 
 .titulo_seccion {
@@ -24,6 +43,23 @@ hr {
 	font-size: 140%;
 }
 
+.cuerpo_seccion {
+	background-color: rgba(255,255,255,0.7);
+	width: 80%;
+	min-width: 500px;	
+	left: 0;
+	top: 0;
+	margin: auto;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 0.1px;
+	border-radius: 10px 10px 10px 10px;
+	-moz-border-radius: 10px 10px 10px 10px;
+	-webkit-border-radius: 10px 10px 10px 10px;
+	border: 0px;
+	border-collapse: collapse;
+}
+
 .titulo_miembro {
 	background-color: brown;
 	color: white;
@@ -33,4 +69,16 @@ hr {
 table {
 	text-align: left;
 	line-height: 40px;
+	vertical-align: text-top;
+}
+
+td {
+	vertical-align: text-top;
+}
+
+#NewMember
+
+div {
+	background-color: wheat;
+	z-index: 1000;
 }

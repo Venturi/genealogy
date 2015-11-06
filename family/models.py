@@ -14,8 +14,8 @@ class Family(models.Model):
 
 class Member(models.Model):
 	member_family_id = models.ForeignKey(Family) #Clave ajena que une al miembro de la familia con su familia
-	member_name = models.CharField(verbose_name='Nombre',help_text='Nombre del nuevo miembro...',max_length=100) #Nombre del miembro de la familia
-	member_surname = models.CharField(verbose_name='Apellidos',help_text='Apellidos del nuevo miembro...',max_length=100) #Apellido o Apellidos del miembro de la familia
+	member_name = models.CharField(verbose_name='Nombre',max_length=100) #Nombre del miembro de la familia
+	member_surname = models.CharField(verbose_name='Apellidos',max_length=100) #Apellido o Apellidos del miembro de la familia
 	member_sex = models.CharField(verbose_name='Sexo',choices=(('Hombre','Hombre'),('Mujer','Mujer'),('No especificado','No especificado')),max_length=20) #Sexo del miembro de la familia
 	member_birth = models.DateField('Fecha de nacimiento',help_text='Fecha en este formato <em>YYYY-MM-DD</em>') #Fecha de nacimiento
 	member_rip = models.DateField('Fecha de fallecimiento',null=True,blank=True) #Fecha de defunción

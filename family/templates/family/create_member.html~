@@ -1,19 +1,19 @@
 {% load staticfiles %}
 
 <head>
-	<title>Editando ficha de {{ form.member_name.value }} {{ form.member_surname.value }}</title>
+	<title>Nuevo miembro de la familia {{ add_member.fam_id }}</title>
 	<link rel="stylesheet" type="text/css" href="{% static 'family/style.css' %}" />
 	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Cantarell" />
 </head>
 
 <div class="cuerpo_seccion">
-<h1>Editando ficha de {{ form.member_name.value }} {{ form.member_surname.value }}</h1>
+<h1>Nuevo miembro de la familia {{ form.member_family_id.value }}</h1>
 <form action="" method="post">
 	{% csrf_token %}
 	<table>
 		{{ form.as_table }}
 	</table>
-	<div class="button_form"><input type="submit" value="Guardar cambios" /><input type="button" value="Cancelar" onclick="location.history.back()" /></div>
+	<input type="submit" value="Crear" /><input type="button" value="Cancelar" onclick="location.history.back()" />
 </form>
 {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 </div>
