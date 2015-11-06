@@ -4,9 +4,6 @@ body {
 	text-align: justify;
 	font-family: Cantarell;
 	width: 100%;
-	top: 0;
-	left: 0;
-	padding: 0;
 	margin: 0;
 }
 
@@ -31,4 +28,9 @@ hr {
 	background-color: brown;
 	color: white;
 	font-size: 110%;
+}
+
+table {
+	text-align: left;
+	line-height: 2%;
 }

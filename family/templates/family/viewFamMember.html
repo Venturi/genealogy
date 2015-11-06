@@ -13,5 +13,6 @@
 <p><b>Nombre:</b> {{ member_data.member_name }}</p>
 <p><b>Fecha de Nacimiento:</b> {{ member_data.member_birth }}</p>
 <p><b>Sexo:</b> {{ member_data.member_sex }}</p>
+<p><b>Foto de perfil:</b> <img src="/static/{{ member_data.member_profile_image.url }}"></img>{{ member_data.member_profile_image.url }}</p>
 <input type="submit" onclick="location.href='/family/member/{{ member_data.id }}/edit/'" value="Editar">
 </body>

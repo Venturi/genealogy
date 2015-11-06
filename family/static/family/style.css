@@ -29,3 +29,8 @@ hr {
 	color: white;
 	font-size: 110%;
 }
+
+table {
+	text-align: left;
+	line-height: 40px;
+}
