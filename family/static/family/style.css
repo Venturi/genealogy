@@ -91,6 +91,10 @@ li {
 	background-color: lightcoral;
 }
 
+a {
+	width: auto;
+}
+
 a:visited {
 	color: white;
 }

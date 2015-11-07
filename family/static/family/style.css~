@@ -62,7 +62,7 @@ hr {
 
 .titulo_miembro {
 	background-color: wheat;
-	color: white;
+	color: navy;
 	font-size: 110%;
 }
 
