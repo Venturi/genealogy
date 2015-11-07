@@ -95,6 +95,6 @@ a {
 	width: auto;
 }
 
-a:visited {
+a:visited, a:before {
 	color: white;
 }
