@@ -12,7 +12,7 @@
 {% if members %}
     <ul>
     {% for famMember in members %}
-        <li><a href="/family/member/{{ famMember.id }}/"><p>{{ famMember.member_surname }}, {{ famMember.member_name }}</p></a></li>
+        <li><a href="/family/member/{{ famMember.id }}/">{{ famMember.member_surname }}, {{ famMember.member_name }}</a></li>
     {% endfor %}
     </ul>
 {% else %}
