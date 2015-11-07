@@ -6,7 +6,7 @@
 	<title>{{ member_data.member_name }} {{ member_data.member_surname }} - Genealogy</title>
 </head>
 
-<body>
+<div class="cuerpo_seccion">
 <div class="titulo_seccion">Familia {{ family_data.family_name }}</div>
 <div class="titulo_miembro">Datos de {{ member_data.member_name }} {{ member_data.member_surname }}</div>
 <p><b>Apellidos:</b> {{ member_data.member_surname }}</p>
@@ -14,5 +14,5 @@
 <p><b>Fecha de Nacimiento:</b> {{ member_data.member_birth }}</p>
 <p><b>Sexo:</b> {{ member_data.member_sex }}</p>
 <p><b>Foto de perfil:</b> <img src="/static/{{ member_data.member_profile_image.url }}"></img>{{ member_data.member_profile_image.url }}</p>
-<input type="submit" onclick="location.href='/family/member/{{ member_data.id }}/edit/'" value="Editar">
-</body>
+<input type="submit" onclick="location.href='/family/member/{{ member_data.id }}/edit/'" value="Editar"><input type="button" onclick="location.href='/family/{{ family_data.id }}/'" value="Volver"/>
+</div>

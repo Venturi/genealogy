@@ -5,9 +5,10 @@
 	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Cantarell" />
 	<title>Familia {{ family.family_name }} - Genealogy</title>
 </head>
-<body>
-<button onclick="location.href='/family/{{ family.id }}/member/add'" type="submit">Nuevo</button>
+
+<div class="cuerpo_seccion">
 <h1 class="titulo_seccion">Miembros de la familia {{ family.family_name }}</h1>
+<button onclick="location.href='/family/{{ family.id }}/member/add'" type="submit">Añadir nuevo miembro</button><input type="button" onclick="location.href='/family/'" value="Lista de familias"/>
 {% if members %}
     <ul>
     {% for famMember in members %}
@@ -17,4 +18,4 @@
 {% else %}
     <p>No hay ningún miembro registrado o dado de alta.</p>
 {% endif %}
-</body>
+</div>

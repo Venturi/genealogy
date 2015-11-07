@@ -15,7 +15,7 @@ body {
 	float: right;
 }
 
-input[type="button"],input[type="submit"] {
+input[type="button"],input[type="submit"],button {
 	padding: 5px;
 	width: auto;
 	min-width: 100px;
@@ -44,7 +44,7 @@ hr {
 }
 
 .cuerpo_seccion {
-	background-color: rgba(255,255,255,0.7);
+	background-color: rgba(255,255,255,0.8);
 	width: 80%;
 	min-width: 500px;	
 	left: 0;
@@ -81,4 +81,10 @@ td {
 div {
 	background-color: wheat;
 	z-index: 1000;
+}
+
+#Family Members
+ul li a {
+	width: 100%;
+	background-color: lightcoral;
 }

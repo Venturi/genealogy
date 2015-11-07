@@ -13,10 +13,9 @@ body {
 
 .button_form {
 	float: right;
-	right: 0;
 }
 
-input[type="button"],input[type="submit"] {
+input[type="button"],input[type="submit"],button {
 	padding: 5px;
 	width: auto;
 	min-width: 100px;
@@ -82,4 +81,10 @@ td {
 div {
 	background-color: wheat;
 	z-index: 1000;
+}
+
+#Family Members
+ul li a {
+	width: 100%;
+	background-color: lightcoral;
 }
