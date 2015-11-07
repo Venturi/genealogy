@@ -8,7 +8,7 @@
 
 <div class="cuerpo_seccion">
 <h1 class="titulo_seccion">Miembros de la familia {{ family.family_name }}</h1>
-<button onclick="location.href='/family/{{ family.id }}/member/add'" type="submit">Añadir nuevo miembro</button><input type="button" onclick="location.href='/family/'" value="Lista de familias"/>
+<button onclick="location.href='/family/{{ family.id }}/member/add'" type="submit">Añadir miembro</button><input type="button" onclick="location.href='/family/'" value="Familias"/>
 {% if members %}
     <ul>
     {% for famMember in members %}

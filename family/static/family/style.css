@@ -84,7 +84,9 @@ div {
 }
 
 #Family Members
-ul li a {
-	width: 100%;
+ul li {
+	color: yellow;
+	list-style-type: none;
+	text-decoration: none;
 	background-color: lightcoral;
 }
