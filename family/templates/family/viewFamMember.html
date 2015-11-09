@@ -13,6 +13,10 @@
 <p><b>Nombre:</b> {{ member_data.member_name }}</p>
 <p><b>Fecha de Nacimiento:</b> {{ member_data.member_birth }}</p>
 <p><b>Sexo:</b> {{ member_data.member_sex }}</p>
-<p><b>Foto de perfil:</b> <img src="/static/{{ member_data.member_profile_image.url }}"></img>{{ member_data.member_profile_image.url }}</p>
+<p><b>Foto de perfil:</b> 
+{% if member_data.member_profile_image.url == NULL %}
+	<img src="/static/{{ member_data.member_profile_image.url }}"></img>{{ member_data.member_profile_image.url }}
+{% endif %}
+</p>
 <input type="submit" onclick="location.href='/family/member/{{ member_data.id }}/edit/'" value="Editar"><input type="button" onclick="location.href='/family/{{ family_data.id }}/'" value="Volver"/>
 </div>

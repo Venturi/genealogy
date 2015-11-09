@@ -35,7 +35,7 @@ class MemberUpdate(UpdateView):
 	model = Member
 	template_name = 'family/edit_member.html'
 	fields = ['member_name','member_surname','member_sex','member_profile_image','member_birth','member_rip','member_email']
-	success_url = reverse_lazy('member')
+	success_url = '/family/'
 
 class MemberDelete(DeleteView):
 	model = Member
