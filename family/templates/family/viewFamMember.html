@@ -18,5 +18,6 @@
 	<img src="/static/{{ member_data.member_profile_image.url }}"></img>{{ member_data.member_profile_image.url }}
 {% endif %}
 </p>
+<p><b>Email:</b> {{ member_data.member_email }}</p>
 <input type="submit" onclick="location.href='/family/member/{{ member_data.id }}/edit/'" value="Editar"><input type="button" onclick="location.href='/family/{{ family_data.id }}/'" value="Volver"/>
 </div>

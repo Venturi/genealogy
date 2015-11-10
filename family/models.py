@@ -9,8 +9,6 @@ class Family(models.Model):
 
 	def __str__(self):
 		return "Familia "+self.family_name
-	def get_absolute_url(self):
-		return reverse('family-detail', kwargs={'pk': self.pk})
 
 class Member(models.Model):
 	member_family_id = models.ForeignKey(Family) #Clave ajena que une al miembro de la familia con su familia
@@ -20,7 +18,7 @@ class Member(models.Model):
 	member_birth = models.DateField('Fecha de nacimiento',help_text='Fecha en este formato <em>YYYY-MM-DD</em>') #Fecha de nacimiento
 	member_rip = models.DateField('Fecha de fallecimiento',null=True,blank=True) #Fecha de defunción
 	member_profile_image = models.ImageField('Foto de perfil',null=True,blank=True) #Imagen de perfil del miembro de la familia
-	member_partner_id = models.IntegerField(default=0) #ID del cónyuge que sirve de enlace a una nueva familia
+	member_partner_id = models.IntegerField(default=0,null=True,blank=True) #ID del cónyuge que sirve de enlace a una nueva familia
 	member_email = models.EmailField('E-Mail',null=True,blank=True) #Correo electrónico de contacto
 
 	def __str__(self):

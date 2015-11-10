@@ -11,6 +11,44 @@ body {
 	z-index: 0;
 }
 
+.menu {
+	top: 0;
+	left: 0;
+	width: 100%;
+	position: fixed;
+}
+
+.menu #login {
+	float: right;
+	right: 0;
+	font-size: 70%;
+}
+
+.left_frame {
+	width: 150px;
+	top: 0;
+	left: 0;
+	height: 100%;
+	float: left;
+	position: fixed;
+}
+
+.cuerpo_seccion {
+	background-color: rgba(0,100,150,0.8);
+	width: auto;
+	min-width: 500px;
+	margin-top: 40px;
+	margin-left: 160px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 0.1px;
+	border-radius: 10px 10px 10px 10px;
+	-moz-border-radius: 10px 10px 10px 10px;
+	-webkit-border-radius: 10px 10px 10px 10px;
+	border: 0px;
+	border-collapse: collapse;
+}
+
 .button_form {
 	float: right;
 }
@@ -43,23 +81,6 @@ hr {
 	font-size: 140%;
 }
 
-.cuerpo_seccion {
-	background-color: rgba(0,100,150,0.8);
-	width: 80%;
-	min-width: 500px;	
-	left: 0;
-	top: 0;
-	margin: auto;
-	padding-left: 10px;
-	padding-right: 10px;
-	padding-bottom: 0.1px;
-	border-radius: 10px 10px 10px 10px;
-	-moz-border-radius: 10px 10px 10px 10px;
-	-webkit-border-radius: 10px 10px 10px 10px;
-	border: 0px;
-	border-collapse: collapse;
-}
-
 .titulo_miembro {
 	background-color: wheat;
 	color: navy;
@@ -89,6 +110,10 @@ li {
 	list-style-type: square;
 	text-decoration: none;
 	background-color: lightcoral;
+}
+
+ul {
+	list-style-type: none;
 }
 
 a {

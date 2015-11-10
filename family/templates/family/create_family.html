@@ -1,13 +1,13 @@
 {% load staticfiles %}
 
 <head>
-	<title>Nuevo miembro de la familia {{ fam_id }}</title>
+	<title>Nuevo Familia</title>
 	<link rel="stylesheet" type="text/css" href="{% static 'family/style.css' %}" />
 	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Cantarell" />
 </head>
 
 <div class="cuerpo_seccion">
-<h1>Nuevo miembro de la familia {{ fam_id }}</h1>
+<h1>Nueva Familia</h1>
 <form action="." method="post">
 	{% csrf_token %}
 	<table>

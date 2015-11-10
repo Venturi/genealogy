@@ -26,10 +26,28 @@ def reqMember(request, mem_id):
 	context = {'member_data':member_data,'family_data':family_data}
 	return render(request, 'family/viewFamMember.html',context)
 
+class FamilyCreate(CreateView):
+	model = Family
+	template_name = 'family/create_family.html'
+	fields = '__all__'
+	success_url = '/family/'
+
+class FamilyUpdate(UpdateView):
+	model = Family
+	template_name = 'family/edit_family.html'
+	fields = '__all__'
+	success_url = '/family/'
+
+class FamilyDelete(DeleteView):
+	model = Family
+	success_url = reverse_lazy('family-list')
+
 class MemberCreate(CreateView):
 	model = Member
+	fam_id = Member.member_family_id
 	template_name = 'family/create_member.html'
-	fields = ['member_name','member_surname','member_sex','member_profile_image','member_birth','member_rip','member_email']
+	fields = '__all__'
+	success_url = '/family/'
 
 class MemberUpdate(UpdateView):
 	model = Member
