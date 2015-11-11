@@ -13,9 +13,11 @@ body {
 
 .menu {
 	top: 0;
-	left: 0;
-	width: 100%;
+	width: 80%;
+	height: 40px;
 	position: fixed;
+	background-color: black;
+	z-index: 1000;
 }
 
 .menu #login {
@@ -34,11 +36,17 @@ body {
 }
 
 .cuerpo_seccion {
+	display: block;
+	position: absolute;
+	top: 40px;
+	left: 0;
+	right: 0;
 	background-color: rgba(0,100,150,0.8);
-	width: auto;
+	width: 80%;
+	height: 100%;
 	min-width: 500px;
-	margin-top: 40px;
-	margin-left: 160px;
+	margin: auto;
+	padding-top: 40px;
 	padding-left: 10px;
 	padding-right: 10px;
 	padding-bottom: 0.1px;
@@ -47,6 +55,7 @@ body {
 	-webkit-border-radius: 10px 10px 10px 10px;
 	border: 0px;
 	border-collapse: collapse;
+	z-index: 500;
 }
 
 .button_form {
