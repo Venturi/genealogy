@@ -20,13 +20,32 @@ body {
 	background-color: black;
 }
 
+.titulo_principal {
+	background-color: wheat;
+	line-height: 40px;
+	width: 100%;
+	color: navy;
+	left: 0;
+	top: 0;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	font-size: 140%;
+	border-radius: 0px 0px 10px 10px;
+	-moz-border-radius: 0px 0px 10px 10px;
+	-webkit-border-radius: 0px 0px 10px 10px;
+	border: 0px;
+	border-collapse: collapse;
+	z-index: 500;
+}
+
 .login {
 	display: block;
 	position: absolute;
 	left: 0;
 	right: 0;
 	background-color: rgba(0,100,150,0.8);
-	width: 300px;
+	width: 310px;
 	margin: auto;
 	margin-top: 20px;
 	border-radius: 10px 10px 10px 10px;
@@ -37,10 +56,6 @@ body {
 	z-index: 500;
 }
 
-input["text"],input["password"] {
-	width: 300px;
-}
-
 .left_button {
 	position: relative;
 	left: 5px;
@@ -49,13 +64,38 @@ input["text"],input["password"] {
 
 .right_button {
 	position: relative;
-	left: 95px;
+	left: 105px;
 	margin-bottom: 10px;
+}
+
+.titulo_seccion {
+	background-color: wheat;
+	line-height: 40px;
+	width: 100%;
+	color: navy;
+	left: 0;
+	top: 0;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	font-size: 140%;
+	border-radius: 10px 10px 0px 0px;
+	-moz-border-radius: 10px 10px 0px 0px;
+	-webkit-border-radius: 10px 10px 0px 0px;
+	border: 0px;
+	border-collapse: collapse;
+	z-index: 500;
+}
+
+.titulo_miembro {
+	background-color: wheat;
+	color: navy;
+	font-size: 110%;
 }
 
 .cuerpo_seccion {
 	display: block;
-	position: absolute;
+	position: fixed;
 	top: 10%;
 	bottom: 10%;
 	left: 0;
@@ -63,11 +103,8 @@ input["text"],input["password"] {
 	background-color: rgba(0,100,150,0.8);
 	width: 80%;
 	height: auto;
-	min-width: 300px;
+	min-width: 400px;
 	margin: auto;
-	padding-top: 40px;
-	padding-left: 10px;
-	padding-right: 10px;
 	padding-bottom: 0.1px;
 	border-radius: 10px 10px 10px 10px;
 	-moz-border-radius: 10px 10px 10px 10px;
@@ -75,10 +112,14 @@ input["text"],input["password"] {
 	border: 0px;
 	border-collapse: collapse;
 	z-index: 500;
+	overflow-y: auto;
 }
 
 .button_form {
 	float: right;
+	position: relative;
+	top: 0;
+	left: 0;
 }
 
 input[type="button"],input[type="submit"],button {
@@ -94,31 +135,6 @@ hr {
 
 .list_family {
 	text-align: center;
-}
-
-.titulo_seccion {
-	background-color: wheat;
-	line-height: 40px;
-	width: 100%;
-	color: navy;
-	left: 0;
-	top: 0;
-	margin: 0;
-	padding: 0;
-	text-align: center;
-	font-size: 140%;
-	border-radius: 10px 10px 10px 10px;
-	-moz-border-radius: 10px 10px 10px 10px;
-	-webkit-border-radius: 10px 10px 10px 10px;
-	border: 0px;
-	border-collapse: collapse;
-	z-index: 500;
-}
-
-.titulo_miembro {
-	background-color: wheat;
-	color: navy;
-	font-size: 110%;
 }
 
 table {

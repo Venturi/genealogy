@@ -1,12 +1,8 @@
-{% load staticfiles %}
+{% extends "base.html" %}
 
-<head>
-	<link rel="stylesheet" type="text/css" href="{% static 'family/style.css' %}" />
-	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Cantarell" />
-	<title>{{ member_data.member_name }} {{ member_data.member_surname }} - Genealogy</title>
-</head>
+{% block title %}{{ member_data.member_name }} {{ member_data.member_surname }} - Genealogy{% endblock %}
 
-<div class="cuerpo_seccion">
+{% block content %}
 <div class="titulo_seccion">Familia {{ family_data.family_name }}</div>
 <div class="titulo_miembro">Datos de {{ member_data.member_name }} {{ member_data.member_surname }}</div>
 <p><b>Apellidos:</b> {{ member_data.member_surname }}</p>
@@ -21,3 +17,4 @@
 <p><b>Email:</b> {{ member_data.member_email }}</p>
 <input type="submit" onclick="location.href='/family/member/{{ member_data.id }}/edit/'" value="Editar"><input type="button" onclick="location.href='/family/{{ family_data.id }}/'" value="Volver"/>
 </div>
+{% endblock %}

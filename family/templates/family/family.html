@@ -1,16 +1,11 @@
-{% load staticfiles %}
+{% extends "base.html" %}
 
-<head>
-	<link rel="stylesheet" type="text/css" href="{% static 'family/style.css' %}" />
-	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Cantarell" />
-	<title>Familias - Genealogy</title>
-</head>
+{% block title %}Familias - Genealogy{% endblock %}
 
-<body class="list_family">
-<div class="titulo_seccion">Bienvenido a Genealogy</div>
-<div class="cuerpo_seccion">
+{% block content %}
+
 <div class="titulo_seccion">Lista de familias registradas</div>
-<input onclick="location.href='/family/add'"  type="submit" value="Nueva Familia"/><input type="button" onclick="location.href='/family/delete'" value="Eliminar Familia"/>
+<input onclick="location.href='/family/add'"  type="submit" value="Nueva Familia"/>
 {% if family_list %}
     <ul>
     {% for family in family_list %}
@@ -20,6 +15,5 @@
 {% else %}
     <p>No hay ninguna familia registrada.</p>
 {% endif %}
-</div>
-<div class="footer">Copyright 2015-2016 Venturi Software</div>
-</body>
+
+{% endblock %}

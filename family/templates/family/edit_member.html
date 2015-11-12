@@ -1,19 +1,17 @@
-{% load staticfiles %}
+{% extends "base.html" %}
 
-<head>
-	<title>Editando ficha de {{ form.member_name.value }} {{ form.member_surname.value }}</title>
-	<link rel="stylesheet" type="text/css" href="{% static 'family/style.css' %}" />
-	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Cantarell" />
-</head>
+{% block title %}Editando ficha de {{ form.member_name.value }} {{ form.member_surname.value }}{% endblock %}
 
-<div class="cuerpo_seccion">
-<h1>Editando ficha de {{ form.member_name.value }} {{ form.member_surname.value }}</h1>
+{% block content %}
+<div class="titulo_seccion">Editando ficha de {{ form.member_name.value }} {{ form.member_surname.value }}</div>
 <form action="" method="post">
+	<div class="button_form"><input type="submit" value="Guardar cambios" /><input type="button" value="Cancelar" onclick="location.href='../'" /></div><br>
 	{% csrf_token %}
+
 	<table>
 		{{ form.as_table }}
 	</table>
-	<div class="button_form"><input type="submit" value="Guardar cambios" /><input type="button" value="Cancelar" onclick="location.href='../'" /></div>
 </form>
 {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+{% endblock %}
 </div>

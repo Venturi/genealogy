@@ -1,19 +1,15 @@
-{% load staticfiles %}
+{% extends "base.html" %}
 
-<head>
-	<title>Nuevo Familia</title>
-	<link rel="stylesheet" type="text/css" href="{% static 'family/style.css' %}" />
-	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Cantarell" />
-</head>
+{% block title %}Nueva Familia{% endblock %}
 
-<div class="cuerpo_seccion">
-<h1>Nueva Familia</h1>
+{% block content %}
+<div class="titulo_seccion">Nueva Familia</div>
 <form action="." method="post">
+	<div class="button_form"><input type="submit" value="Crear" /><input type="button" value="Cancelar" onclick="location.href='/family/'" /></div>
 	{% csrf_token %}
 	<table>
 		{{ form.as_table }}
 	</table>
-	<div class="button_form"><input type="submit" value="Crear" /><input type="button" value="Cancelar" onclick="location.history.back()" /></div>
 </form>
 {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
-</div>
+{% endblock %}
