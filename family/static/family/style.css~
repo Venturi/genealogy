@@ -11,42 +11,61 @@ body {
 	z-index: 0;
 }
 
-.menu {
-	top: 0;
-	width: 80%;
-	height: 40px;
+.footer {
+	display: block;
 	position: fixed;
+	width: 100%;
+	bottom: 0;
+	text-align: center;
 	background-color: black;
-	z-index: 1000;
 }
 
-.menu #login {
-	float: right;
-	right: 0;
-	font-size: 70%;
-}
-
-.left_frame {
-	width: 150px;
-	top: 0;
+.login {
+	display: block;
+	position: absolute;
 	left: 0;
-	height: 100%;
-	float: left;
-	position: fixed;
+	right: 0;
+	background-color: rgba(0,100,150,0.8);
+	width: 300px;
+	margin: auto;
+	margin-top: 20px;
+	border-radius: 10px 10px 10px 10px;
+	-moz-border-radius: 10px 10px 10px 10px;
+	-webkit-border-radius: 10px 10px 10px 10px;
+	border: 0px;
+	border-collapse: collapse;
+	z-index: 500;
+}
+
+input["text"],input["password"] {
+	width: 300px;
+}
+
+.left_button {
+	position: relative;
+	left: 5px;
+	margin-bottom: 10px;
+}
+
+.right_button {
+	position: relative;
+	left: 95px;
+	margin-bottom: 10px;
 }
 
 .cuerpo_seccion {
 	display: block;
 	position: absolute;
-	top: 40px;
+	top: 10%;
+	bottom: 10%;
 	left: 0;
 	right: 0;
 	background-color: rgba(0,100,150,0.8);
 	width: 80%;
-	height: 100%;
-	min-width: 500px;
+	height: auto;
+	min-width: 300px;
 	margin: auto;
-	margin-top: 40px;
+	padding-top: 40px;
 	padding-left: 10px;
 	padding-right: 10px;
 	padding-bottom: 0.1px;
@@ -88,6 +107,12 @@ hr {
 	padding: 0;
 	text-align: center;
 	font-size: 140%;
+	border-radius: 10px 10px 10px 10px;
+	-moz-border-radius: 10px 10px 10px 10px;
+	-webkit-border-radius: 10px 10px 10px 10px;
+	border: 0px;
+	border-collapse: collapse;
+	z-index: 500;
 }
 
 .titulo_miembro {
@@ -97,28 +122,13 @@ hr {
 }
 
 table {
+	display: table;
+	margin: 0;
+	left: 0;
+	right: 0;
 	text-align: left;
 	line-height: 40px;
 	vertical-align: text-top;
-}
-
-td {
-	vertical-align: text-top;
-}
-
-#NewMember
-
-div {
-	background-color: wheat;
-	z-index: 1000;
-}
-
-#Family Members
-li {
-	color: yellow;
-	list-style-type: square;
-	text-decoration: none;
-	background-color: lightcoral;
 }
 
 ul {

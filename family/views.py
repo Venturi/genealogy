@@ -9,9 +9,12 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.core.urlresolvers import reverse_lazy
 
 def index(request):
+	return render(request, 'index.html')
+
+def family(request):
 	family_list = Family.objects.all
 	context = {'family_list':family_list}
-	return render(request, 'family/index.html',context)
+	return render(request, 'family/family.html',context)
 
 def reqFamily(request, req_id):
 	family = get_object_or_404(Family, pk=req_id)

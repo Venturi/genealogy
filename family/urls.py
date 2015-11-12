@@ -4,7 +4,7 @@ from . import views
 from  .views import FamilyCreate,FamilyUpdate,FamilyDelete,MemberCreate,MemberUpdate,MemberDelete
 
 urlpatterns = [
-	url(r'^$', views.index, name='index'),
+	url(r'^$', views.family, name='family'),
 	url(r'^(?P<req_id>[0-9])+/$', views.reqFamily, name='family'),
 	url(r'^member/(?P<mem_id>[0-9])+/$', views.reqMember, name='member'),
 	url(r'^add/$', FamilyCreate.as_view(), name='add_family'),

@@ -16,4 +16,5 @@
 <br>
 <input class="left_button" type="button" value="Registro"/><input class="right_button" type="button" value="Entrar"/>
 </div>
+<div class="footer">Copyright 2015-2016 Venturi Software</div>
 </body>

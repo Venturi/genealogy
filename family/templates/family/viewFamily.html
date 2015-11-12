@@ -1,14 +1,14 @@
 {% load staticfiles %}
 
 <head>
+	<title>Familia {{ family.family_name }} - Genealogy</title>
 	<link rel="stylesheet" type="text/css" href="{% static 'family/style.css' %}" />
 	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Cantarell" />
-	<title>Familia {{ family.family_name }} - Genealogy</title>
 </head>
 
 <div class="cuerpo_seccion">
 <h1 class="titulo_seccion">Miembros de la familia {{ family.family_name }}</h1>
-<input onclick="location.href='/family/{{ family.id }}/member/add'"  type="submit" value="Añadir miembro"/><input type="button" onclick="location.href='/family/'" value="Familias"/>
+<input onclick="location.href='/family/{{ family.id }}/member/add'" type="submit" value="Añadir miembro"/><input type="button" onclick="location.href='/family/'" value="Familias"/>
 {% if members %}
     <ul>
     {% for famMember in members %}
