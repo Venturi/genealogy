@@ -11,6 +11,40 @@ body {
 	z-index: 0;
 }
 
+input[type="button"],input[type="submit"],button {
+	padding: 5px;
+	width: auto;
+	min-width: 100px;
+	font-weight: bold;
+}
+
+hr {
+	width: 100%;
+}
+
+table {
+	display: table;
+	margin: 0;
+	left: 0;
+	right: 0;
+	text-align: left;
+	line-height: 40px;
+	vertical-align: text-top;
+}
+
+ul {
+	list-style-type: none;
+}
+
+a {
+	width: auto;
+	color: white;
+}
+
+a:visited, a:before {
+	color: white;
+}
+
 .footer {
 	display: block;
 	position: fixed;
@@ -41,11 +75,11 @@ body {
 
 .login {
 	display: block;
-	position: absolute;
+	position: relative;
 	left: 0;
 	right: 0;
 	background-color: rgba(0,100,150,0.8);
-	width: 310px;
+	width: 355px;
 	margin: auto;
 	margin-top: 20px;
 	border-radius: 10px 10px 10px 10px;
@@ -56,20 +90,57 @@ body {
 	z-index: 500;
 }
 
-input["text"],input["password"] {
-	width: 300px;
+#login_form {
+	position: relative;
+	margin: auto;
+	padding: 0;
+	left: 0;
+	right: 0;
 }
 
-.left_button {
-	position: relative;
-	left: 5px;
-	margin-bottom: 10px;
+#login_form td {
+	padding-left: 5px;
+	padding-right: 5px;
+	width: 200px;
 }
 
-.right_button {
+.form_label {
+	width: 300;
+}
+
+#login_form input {
+	width: 200px;
+}
+
+#login_button {
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin: auto;
+}
+
+.registro {
+	display: block;
 	position: relative;
-	left: 105px;
-	margin-bottom: 10px;
+	left: 0;
+	right: 0;
+	background-color: rgba(0,100,150,0.8);
+	width: 555px;
+	margin: auto;
+	margin-top: 20px;
+	border-radius: 10px 10px 10px 10px;
+	-moz-border-radius: 10px 10px 10px 10px;
+	-webkit-border-radius: 10px 10px 10px 10px;
+	border: 0px;
+	border-collapse: collapse;
+	z-index: 500;
+}
+
+#register_button {
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin: auto;
 }
 
 .titulo_seccion {
@@ -126,40 +197,6 @@ input["text"],input["password"] {
 	left: 0;
 }
 
-input[type="button"],input[type="submit"],button {
-	padding: 5px;
-	width: auto;
-	min-width: 100px;
-	font-weight: bold;
-}
-
-hr {
-	width: 100%;
-}
-
 .list_family {
 	text-align: center;
-}
-
-table {
-	display: table;
-	margin: 0;
-	left: 0;
-	right: 0;
-	text-align: left;
-	line-height: 40px;
-	vertical-align: text-top;
-}
-
-ul {
-	list-style-type: none;
-}
-
-a {
-	width: auto;
-	color: white;
-}
-
-a:visited, a:before {
-	color: white;
 }
