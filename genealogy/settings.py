@@ -38,6 +38,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'family',
+    'captcha',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -104,3 +105,11 @@ STATIC_URL = '/static/'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+LOGIN_URL = '/'
+
+#reCaptcha
+RECAPTCHA_PUBLIC_KEY = '6Lezo84SAAAAAK9O-cgYF9sh-Gc4adwj_Mj2o86e'
+RECAPTCHA_PRIVATE_KEY = '6Lezo84SAAAAAJrxmlCqpKlgypEjt7aMNQuJtiZE'
+NOCAPTCHA = True
+RECAPTCHA_USE_SSL = True

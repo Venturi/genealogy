@@ -3,6 +3,7 @@
 <head>
 	<link rel="stylesheet" type="text/css" href="{% static 'family/style.css' %}" />
 	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Cantarell" />
+	<link rel="shortcut icon" href="family/static/images/favicon.ico" />
 	<title>Genealogy - Bienvenido/a</title>
 </head>
 
@@ -18,18 +19,21 @@
 			<br>
 			<input id="login_button" type="submit" value="Entrar"/><br>
 		</form>
-	</div><br><br><br>
+	</div><br>
 	<div class="registro">
 		<div class="titulo_seccion">Introduzca sus datos</div><br>
 		<form action="">
 			<table id="login_form">
-				<tr><td class="form_label">Usuario:</td><td><input type="text" value="" /></td></tr>
-				<tr><td class="form_label">Contraseña:</td><td><input type="password" value="" /></td></tr>
-				<tr><td class="form_label">Vuelva a introducir la contraseña:</td><td><input type="password" value="" /></td></tr>
+				<tr><td class="form_label" id="reg_user">Usuario:</td><td><input type="text" value="" /></td></tr>
+				<tr><td class="form_label" id="reg_password">Contraseña:</td><td><input type="password" value="" /></td></tr>
+				<tr><td class="form_label" id="reg_repassword">Vuelva a introducir la contraseña:</td><td><input type="password" value="" /></td></tr>
+				<tr><td class="form_label" id="reg_mail">E-Mail:</td><td><input type="email" value="" /></td></tr>
 			</table>
+			<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 			<br>
 			<input id="login_button" type="submit" value="Registrarse"/><br>
 		</form>
 	</div>
+	<br><br>
 	<div class="footer">Copyright 2015-2016 Venturi Software</div>
 </body>

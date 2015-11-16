@@ -52,6 +52,7 @@ a:visited, a:before {
 	bottom: 0;
 	text-align: center;
 	background-color: black;
+	z-index: 1000;
 }
 
 .titulo_principal {
@@ -160,6 +161,10 @@ a:visited, a:before {
 	border: 0px;
 	border-collapse: collapse;
 	z-index: 500;
+}
+
+.recaptcha {
+	text-align: center;
 }
 
 .titulo_miembro {

@@ -22,3 +22,4 @@ urlpatterns = [
     url(r'^$', views.index,name='index'),
     url(r'^family/', include('family.urls',namespace='family')),
 ]
+

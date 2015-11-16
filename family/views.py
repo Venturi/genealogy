@@ -1,8 +1,14 @@
 # -*- coding: utf-8 -*-
 from django.shortcuts import render,get_object_or_404
 
+#Autenticación
+from django.contrib.auth.decorators import login_required
+
 #Importamos nuestros modelos de datos
 from .models import Family, Member
+
+#reCaptcha
+from captcha.fields import ReCaptchaField
 
 #Forms
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
@@ -11,8 +17,10 @@ from django.core.urlresolvers import reverse_lazy
 def index(request):
 	return render(request, 'index.html')
 
+@login_required(login_url='/')
 def family(request):
 	family_list = Family.objects.all
+	captcha = ReCaptchaField()
 	context = {'family_list':family_list}
 	return render(request, 'family/family.html',context)
 
