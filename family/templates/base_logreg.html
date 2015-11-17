@@ -1,0 +1,14 @@
+{% load staticfiles %}
+
+<head>
+	<link rel="stylesheet" type="text/css" href="{% static 'family/style.css' %}" />
+	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Cantarell" />
+	<link rel="shortcut icon" href="{% static 'family/images/favicon.ico' %}" />
+	<title>{% block title %}Inicio - Genealogy{% endblock %}</title>
+</head>
+
+<body>
+	<div class="titulo_principal">{% block section_title %}Bienvenido a Genealogy{% endblock %}</div><br>
+	{% block content %}{% endblock %}<br><br>
+{% block footer %}<div class="footer">Copyright 2015-2016 Venturi Software</div>{% endblock %}
+</body>

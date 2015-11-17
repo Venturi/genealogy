@@ -17,7 +17,7 @@ from django.core.urlresolvers import reverse_lazy
 
 def index(request):
 	if request.method == 'POST':
-		username = bcrypt(request.POST['login_username'],'pbkdf2_sha256')
+		username = request.POST['login_username']
 		password = request.POST['login_password']
 		user = authenticate(username=username, password=password)
 		if user is not None:
@@ -30,9 +30,13 @@ def index(request):
 			print ('Datos de usuario incorrectos')
 	else:
 		login_form = LoginForm()
-		new_user = RegUserForm()
-		context = {'login_form':login_form,'new_user':new_user}
+		context = {'login_form':login_form}
 		return render(request, 'index.html',context)
+
+def regForm(request):
+	new_user = RegUserForm()
+	context = {'new_user':new_user}
+	return render(request, 'register.html',context)
 
 @login_required(login_url='/')
 def family(request):

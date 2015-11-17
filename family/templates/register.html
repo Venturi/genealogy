@@ -1,0 +1,22 @@
+{% extends "base_logreg.html" %}
+
+{% block title %}Genealogy - Registro{% endblock %}
+
+{% block section_title %}Registro de nuevo usuario{% endblock %}
+
+{% block content %}
+	<div class="registro">
+		<div class="titulo_seccion">Introduzca sus datos</div><br>
+		<form action="" method="POST">
+			{% csrf_token %}
+			<table id="register_form">
+				{{ new_user.as_table }}
+			</table>
+			<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+			<br>
+			<div class="register_btnGroup">
+				<input id="register_submit" type="submit" value="Registrarse"/><input id="register_cancel" type="button" value="Cancelar"onclick="location.href='/'"/>
+			</div><br>
+		</form>
+	</div>
+{% endblock %}
