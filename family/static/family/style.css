@@ -91,7 +91,7 @@ a:visited, a:before {
 	z-index: 500;
 }
 
-#login_form {
+#login_form, #register_form {
 	position: relative;
 	margin: auto;
 	padding: 0;
@@ -99,7 +99,7 @@ a:visited, a:before {
 	right: 0;
 }
 
-#login_form td {
+#login_form td, #register_form td {
 	padding-left: 5px;
 	padding-right: 5px;
 	width: 200px;

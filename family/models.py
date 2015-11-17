@@ -1,6 +1,7 @@
 # -*- encoding: utf-8 -*-
 
 from django.db import models
+from django import forms
 
 class Family(models.Model):
 	family_name = models.CharField('Apellido familiar',max_length=100) #Apellido familiar
@@ -29,3 +30,13 @@ class Member(models.Model):
 
 	def image_tag(self):
 		return u'<img src="%s" />' % self.member_profile_image.url
+
+class LoginForm(forms.Form):
+	login_username = forms.CharField(label='Usuario',max_length=100) #Login del usuario nuevo
+	login_password = forms.CharField(label='Contraseña',min_length=8,max_length=32, widget=forms.PasswordInput) #Password usuario nuevo
+		
+class RegUser(forms.Form):
+	reg_username = forms.CharField(label='Usuario',max_length=100) #Login del usuario nuevo
+	reg_password = forms.CharField(label='Contraseña',min_length=8,max_length=32, widget=forms.PasswordInput) #Password usuario nuevo
+	reg_repassword = forms.CharField(label='Vuelva a introducirla',min_length=8,max_length=32, widget=forms.PasswordInput)
+	reg_email = forms.EmailField(label='E-Mail') #Email usuario nuevo

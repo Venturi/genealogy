@@ -5,7 +5,7 @@ from django.shortcuts import render,get_object_or_404
 from django.contrib.auth.decorators import login_required
 
 #Importamos nuestros modelos de datos
-from .models import Family, Member
+from .models import Family, Member, LoginForm, RegUser
 
 #reCaptcha
 from captcha.fields import ReCaptchaField
@@ -15,7 +15,10 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.core.urlresolvers import reverse_lazy
 
 def index(request):
-	return render(request, 'index.html')
+	login_form = LoginForm()
+	new_user = RegUserForm()
+	context = {'login_form':login_form,'new_user':new_user}
+	return render(request, 'index.html',context)
 
 @login_required(login_url='/')
 def family(request):
@@ -36,6 +39,10 @@ def reqMember(request, mem_id):
 	family_data = get_object_or_404(Family, pk=fam_id)
 	context = {'member_data':member_data,'family_data':family_data}
 	return render(request, 'family/viewFamMember.html',context)
+
+class RegUserForm(RegUser):
+	model = RegUser
+	fields = '__all__'
 
 class FamilyCreate(CreateView):
 	model = Family
