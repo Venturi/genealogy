@@ -5,7 +5,9 @@
 {% block content %}
 <div class="cabecera_seccion">
 	<h1 class="titulo_seccion">Miembros de la familia {{ family.family_name }}</h1>
-	<input onclick="location.href='/family/{{ family.id }}/member/add'" type="submit" value="Añadir miembro"/><input type="button" onclick="location.href='/family/'" value="Familias"/><input type="button" onclick="location.href='/family/delete'" value="Eliminar Familia"/>
+	<input type="button" onclick="location.href='/family/'" value="Familias"/>
+	<input onclick="location.href='/family/{{ family.id }}/member/add'" type="submit" value="Añadir miembro"/>
+	<input type="button" onclick="location.href='/family/delete'" value="Eliminar Familia"/>
 	{% if members %}
 		<ul>
 		{% for famMember in members %}
