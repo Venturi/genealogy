@@ -7,7 +7,6 @@
 <form action="" method="post">
 	<div class="button_form"><input type="submit" value="Guardar cambios" /><input type="button" value="Cancelar" onclick="location.href='../'" /></div><br>
 	{% csrf_token %}
-
 	<table>
 		{{ form.as_table }}
 	</table>

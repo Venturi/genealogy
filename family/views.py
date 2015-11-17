@@ -3,6 +3,7 @@ from django.shortcuts import render,get_object_or_404
 
 #Autenticación
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth import authenticate,login,logout
 
 #Importamos nuestros modelos de datos
 from .models import Family, Member, LoginForm, RegUser
@@ -15,10 +16,23 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.core.urlresolvers import reverse_lazy
 
 def index(request):
-	login_form = LoginForm()
-	new_user = RegUserForm()
-	context = {'login_form':login_form,'new_user':new_user}
-	return render(request, 'index.html',context)
+	if request.method == 'POST':
+		username = bcrypt(request.POST['login_username'],'pbkdf2_sha256')
+		password = request.POST['login_password']
+		user = authenticate(username=username, password=password)
+		if user is not None:
+			if user.is_active:
+				login(request, user)
+				family(request)
+			else:
+				print ('Usuario inactivo, revise su correo y actívelo')
+		else:
+			print ('Datos de usuario incorrectos')
+	else:
+		login_form = LoginForm()
+		new_user = RegUserForm()
+		context = {'login_form':login_form,'new_user':new_user}
+		return render(request, 'index.html',context)
 
 @login_required(login_url='/')
 def family(request):

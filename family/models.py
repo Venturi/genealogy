@@ -28,13 +28,12 @@ class Member(models.Model):
 	def get_absolute_url(self):
 		return self.member_family_id
 
-	def image_tag(self):
-		return u'<img src="%s" />' % self.member_profile_image.url
-
 class LoginForm(forms.Form):
 	login_username = forms.CharField(label='Usuario',max_length=100) #Login del usuario nuevo
 	login_password = forms.CharField(label='Contraseña',min_length=8,max_length=32, widget=forms.PasswordInput) #Password usuario nuevo
-		
+	def hash():
+		return bcrypt.hashpw(str(uuid.UUID4()), bcrypt.gensalt())
+
 class RegUser(forms.Form):
 	reg_username = forms.CharField(label='Usuario',max_length=100) #Login del usuario nuevo
 	reg_password = forms.CharField(label='Contraseña',min_length=8,max_length=32, widget=forms.PasswordInput) #Password usuario nuevo
