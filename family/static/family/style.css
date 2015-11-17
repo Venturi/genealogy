@@ -109,7 +109,7 @@ a:visited, a:before {
 	width: 300;
 }
 
-#login_form input {
+#login_form input, #register_form input  {
 	width: 200px;
 }
 
