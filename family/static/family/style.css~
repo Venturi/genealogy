@@ -11,6 +11,10 @@ body {
 	z-index: 0;
 }
 
+input:focus, input:active {
+	outline: none;
+}
+
 input[type="button"],input[type="submit"],button {
 	padding: 5px;
 	width: auto;
@@ -74,9 +78,25 @@ a:visited, a:before {
 	z-index: 500;
 }
 
+#logout_button,#logout_button:focus {
+	min-width: 40px;
+	height: auto;
+	position: absolute;
+	right: 0;
+	background-image: url('images/logout.png');
+	background-position: center center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	border: 0;
+	background-color: wheat;
+	outline: none;	
+}
+
 .login {
 	display: block;
+	font-size: 85%;
 	position: relative;
+	line-height: 40px;
 	left: 0;
 	right: 0;
 	background-color: rgba(0,100,150,0.8);
@@ -91,7 +111,8 @@ a:visited, a:before {
 	z-index: 500;
 }
 
-#login_form {
+#login_form, #register_form {
+	font-size: 85%;
 	position: relative;
 	margin: auto;
 	padding: 0;
@@ -99,7 +120,7 @@ a:visited, a:before {
 	right: 0;
 }
 
-#login_form td {
+#login_form td, #register_form td {
 	padding-left: 5px;
 	padding-right: 5px;
 	width: 200px;
@@ -109,20 +130,22 @@ a:visited, a:before {
 	width: 300;
 }
 
-#login_form input {
+#login_form input, #register_form input  {
 	width: 200px;
 }
 
 #login_button {
 	position: absolute;
-	left: 0;
-	right: 0;
+	right: 5px;
 	margin: auto;
 }
+
+/*Sección Registro*/
 
 .registro {
 	display: block;
 	position: relative;
+	font-size: 85%;
 	left: 0;
 	right: 0;
 	background-color: rgba(0,100,150,0.8);
@@ -137,12 +160,24 @@ a:visited, a:before {
 	z-index: 500;
 }
 
-#register_button {
+.register_btnGroup {
+	display: inline-block
+	width: 100%;
+}
+
+#register_submit {
 	position: absolute;
-	left: 0;
-	right: 0;
+	left: 5px;
 	margin: auto;
 }
+
+#register_cancel {
+	position: absolute;
+	right: 5px;
+	margin: auto;
+}
+
+/*FIN Registro*/
 
 .titulo_seccion {
 	background-color: wheat;
@@ -164,6 +199,9 @@ a:visited, a:before {
 }
 
 .recaptcha {
+	left: 0;
+	right: 0;
+	margin: auto;
 	text-align: center;
 }
 

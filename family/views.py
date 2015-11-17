@@ -15,23 +15,9 @@ from captcha.fields import ReCaptchaField
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.core.urlresolvers import reverse_lazy
 
-def index(request):
-	if request.method == 'POST':
-		username = request.POST['login_username']
-		password = request.POST['login_password']
-		user = authenticate(username=username, password=password)
-		if user is not None:
-			if user.is_active:
-				login(request, user)
-				family(request)
-			else:
-				print ('Usuario inactivo, revise su correo y actívelo')
-		else:
-			print ('Datos de usuario incorrectos')
-	else:
-		login_form = LoginForm()
-		context = {'login_form':login_form}
-		return render(request, 'index.html',context)
+def logout_view(request):
+    logout(request)
+    return HttpResponseRedirect('/')
 
 def regForm(request):
 	new_user = RegUserForm()

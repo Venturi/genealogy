@@ -11,6 +11,10 @@ body {
 	z-index: 0;
 }
 
+input:focus, input:active {
+	outline: none;
+}
+
 input[type="button"],input[type="submit"],button {
 	padding: 5px;
 	width: auto;
@@ -72,6 +76,20 @@ a:visited, a:before {
 	border: 0px;
 	border-collapse: collapse;
 	z-index: 500;
+}
+
+#logout_button,#logout_button:focus,#logout_button::-moz-focus-inner {
+	min-width: 40px;
+	height: auto;
+	position: absolute;
+	right: 0;
+	background-image: url('images/logout.png');
+	background-position: center center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	border: 0;
+	background-color: wheat;
+	outline: none;	
 }
 
 .login {
