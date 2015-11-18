@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """genealogy URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
@@ -23,5 +24,6 @@ urlpatterns = [
     url(r'^$', auth_views.login,{'template_name': 'index.html'}),
     url(r'^register/', views.regForm,name='new_user'),
     url(r'^family/', include('family.urls',namespace='family')),
+	url(r'^logout/$', views.logout_view,name='logout'), #pasando de auth_views, uso una función personalizada en views para hacer logout
 ]
 

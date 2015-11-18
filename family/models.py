@@ -3,6 +3,7 @@
 from django.db import models
 from django import forms
 
+#Modelos de datos
 class Family(models.Model):
 	family_name = models.CharField('Apellido familiar',max_length=100) #Apellido familiar
 	family_count = models.IntegerField('Número de miembros',default=0) #Número de componentes de la familia
@@ -28,6 +29,7 @@ class Member(models.Model):
 	def get_absolute_url(self):
 		return self.member_family_id
 
+#Modelos para formularios
 class LoginForm(forms.Form):
 	login_username = forms.CharField(label='Usuario',max_length=100) #Login del usuario nuevo
 	login_password = forms.CharField(label='Contraseña',min_length=8,max_length=32, widget=forms.PasswordInput) #Password usuario nuevo

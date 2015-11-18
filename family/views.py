@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from django.shortcuts import render,get_object_or_404
+from django.http import HttpResponseRedirect #Necesario para el redirect al hacer logout
 
 #Autenticación
 from django.contrib.auth.decorators import login_required
@@ -16,8 +17,8 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.core.urlresolvers import reverse_lazy
 
 def logout_view(request):
-    logout(request)
-    return HttpResponseRedirect('/')
+	logout(request)
+	return HttpResponseRedirect('/')
 
 def regForm(request):
 	new_user = RegUserForm()
@@ -31,12 +32,14 @@ def family(request):
 	context = {'family_list':family_list}
 	return render(request, 'family/family.html',context)
 
+@login_required(login_url='/')
 def reqFamily(request, req_id):
 	family = get_object_or_404(Family, pk=req_id)
 	members = Member.objects.filter(member_family_id=req_id)
 	context = {'family':family,'members':members}
 	return render(request, 'family/viewFamily.html',context)
-	
+
+@login_required(login_url='/')
 def reqMember(request, mem_id):
 	member_data = get_object_or_404(Member, pk=mem_id)
 	fam_id = member_data.member_family_id.id
