@@ -9,11 +9,7 @@
 
 <body>
 	<div class="titulo_principal">{% block section_title %}
-	{% if user.is_authenticated %}
-		Bienvenido, {{ request.user.first_name.title }} {{ request.user.last_name.title }}
-	{% else %}
-		Bienvenido, nuevo usuario, regístrese primero
-	{% endif %}{% endblock %}
+		Bienvenido, {{ request.user.first_name.title }} {{ request.user.last_name.title }}{% endblock %}
 		<input id="logout_button" type="submit" value="" onclick="location.href='/logout/'"/>
 	</div>
 	<div class="cuerpo_seccion">
