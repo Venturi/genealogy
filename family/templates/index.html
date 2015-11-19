@@ -10,7 +10,7 @@
 		<form action="{% url 'django.contrib.auth.views.login' %}" method="POST">
 			{% csrf_token %}
 			<table id="login_form">
-				{{ form.as_table }}
+				{{ form.as_table }} 
 			</table>
 			<br>
 			<input id="register_submit" type="button" value="Registrarse" onclick="location.href='/register/'"/><input id="login_button" type="submit" value="Entrar"/><br>

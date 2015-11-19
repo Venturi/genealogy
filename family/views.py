@@ -25,21 +25,23 @@ def regForm(request):
 	context = {'new_user':new_user}
 	return render(request, 'register.html',context)
 
-@login_required(login_url='/')
+def logForm(request):
+	log_user = LoginForm()
+	context = {'log_user':log_user}
+	return render(request, 'index.html',context)
+
 def family(request):
 	family_list = Family.objects.all
 	captcha = ReCaptchaField()
 	context = {'family_list':family_list}
 	return render(request, 'family/family.html',context)
 
-@login_required(login_url='/')
 def reqFamily(request, req_id):
 	family = get_object_or_404(Family, pk=req_id)
 	members = Member.objects.filter(member_family_id=req_id)
 	context = {'family':family,'members':members}
 	return render(request, 'family/viewFamily.html',context)
 
-@login_required(login_url='/')
 def reqMember(request, mem_id):
 	member_data = get_object_or_404(Member, pk=mem_id)
 	fam_id = member_data.member_family_id.id

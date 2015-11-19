@@ -144,7 +144,6 @@ a:visited, a:before {
 .registro {
 	display: block;
 	position: relative;
-	font-size: 85%;
 	left: 0;
 	right: 0;
 	background-color: rgba(0,100,150,0.8);
