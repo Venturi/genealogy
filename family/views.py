@@ -58,6 +58,10 @@ class FamilyCreate(CreateView):
 	template_name = 'family/create_family.html'
 	fields = '__all__'
 	success_url = '/family/'
+	def get_context_data(self, **kwargs):
+		context = super(Family, self).get_context_data(**kwargs)
+		context['family_name'] = self.family_name
+		return context
 
 class FamilyUpdate(UpdateView):
 	model = Family

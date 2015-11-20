@@ -21,9 +21,9 @@ from family import views
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^$', auth_views.login,{'template_name': 'index.html'}),
+    url(r'^$', auth_views.login,{'template_name': 'index.html'},name='index'),
     url(r'^register/', views.regForm,name='new_user'),
-    url(r'^family/', include('family.urls',namespace='family')),
+    url(r'^family/', include('family.urls',namespace='family'),name='family'),
 	url(r'^logout/$', views.logout_view,name='logout'), #pasando de auth_views, uso una función personalizada en views para hacer logout
 ]
 

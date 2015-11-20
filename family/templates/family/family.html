@@ -1,15 +1,15 @@
 {% extends "base.html" %}
 
-{% block title %}Familias - Genealogy{% endblock %}
+{% block title %}Genealogy - Familias{% endblock %}
 
 {% block content %}
 
 <div class="titulo_seccion">Lista de familias registradas</div>
-<input onclick="location.href='/family/add'"  type="submit" value="Nueva Familia"/>
+<input onclick="location.href='{% url 'family:add_family' %}'"  type="submit" value="Nueva Familia"/>
 {% if family_list %}
     <ul>
     {% for family in family_list %}
-        <li><a href="/family/{{ family.id }}/">Familia {{ family.family_name }}</a></li>
+        <li><a href="{% url 'family:family' family.id %}">Familia {{ family.family_name }}</a></li>
     {% endfor %}
     </ul>
 {% else %}

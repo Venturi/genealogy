@@ -1,17 +1,17 @@
 {% extends "base.html" %}
 
-{% block title %}Familia {{ family.family_name }} - Genealogy{% endblock %}
+{% block title %}Genealogy - Familia {{ family.family_name }}{% endblock %}
 
 {% block content %}
 <div class="cabecera_seccion">
 	<h1 class="titulo_seccion">Miembros de la familia {{ family.family_name }}</h1>
-	<input type="button" onclick="location.href='/family/'" value="Familias"/>
-	<input onclick="location.href='/family/{{ family.id }}/member/add'" type="submit" value="Añadir miembro"/>
-	<input type="button" onclick="location.href='/family/delete'" value="Eliminar Familia"/>
+	<input type="button" onclick="location.href='{% url 'family:family' %}'" value="Familias"/>
+	<input onclick="location.href='{% url 'family:add_member' family.id %}'" type="submit" value="Añadir miembro"/>
+	<input type="button" onclick="location.href='{% url 'family:delete_family' family.id %}'" value="Eliminar Familia"/>
 	{% if members %}
 		<ul>
 		{% for famMember in members %}
-			<li><a href="/family/member/{{ famMember.id }}/">{{ famMember.member_surname }}, {{ famMember.member_name }}</a></li>
+			<li><a href="{% url 'family:member' famMember.id %}">{{ famMember.member_surname }}, {{ famMember.member_name }}</a></li>
 		{% endfor %}
 		</ul>
 	{% else %}

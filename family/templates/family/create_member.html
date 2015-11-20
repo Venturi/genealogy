@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 
-{% block title %}Nuevo miembro de la familia {{ fam_id }}{% endblock %}
+{% block title %}Nuevo miembro de la familia - Genealogy{% endblock %}
 
 {% block content %}
-<div class="titulo_seccion">Nuevo miembro de la familia {{ fam_id }}</div>
+<div class="titulo_seccion">Nuevo miembro de la familia {{ family_name }}</div>
 <form action="." method="post">
 	<div class="button_form"><input type="submit" value="Crear" /><input type="button" value="Cancelar" onclick="location.history.back()" /></div><br>
 	{% csrf_token %}

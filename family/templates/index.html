@@ -14,8 +14,8 @@
 				<tr><td><b>Contraseña:</b></td><td>{{ form.password }}</td></tr>
 			</table>
 			<br>
-			<input id="register_submit" type="button" value="Registrarse" onclick="location.href='/register/'"/><input id="login_button" type="submit" value="Entrar"/><br>
-			<input type="hidden" name="next" value="/family/" />
+			<input id="register_submit" type="button" value="Registrarse" onclick="location.href={% url 'new_user' %}"/><input id="login_button" type="submit" value="Entrar"/><br>
+			<input type="hidden" name="next" value="{% url 'family:family' %}" />
 		</form>
 	</div><br>
 {% endblock %}

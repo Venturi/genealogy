@@ -10,6 +10,7 @@ urlpatterns = [
 	url(r'^(?P<req_id>[0-9])+/$', login_required(views.reqFamily), name='family'),
 	url(r'^member/(?P<mem_id>[0-9])+/$', login_required(views.reqMember), name='member'),
 	url(r'^add/$', login_required(FamilyCreate.as_view()), name='add_family'),
+	url(r'^delete/$', login_required(FamilyDelete.as_view()), name='delete_family'),
 	url(r'^(?P<fam_id>[0-9])+/edit/$', login_required(FamilyUpdate.as_view()), name='edit_family'),
 	url(r'^(?P<fam_id>[0-9])+/delete/$', login_required(FamilyDelete.as_view()), name='delete_family'),
 	url(r'^(?P<fam_id>[0-9])+/member/add/$', login_required(MemberCreate.as_view()), name='add_member'),

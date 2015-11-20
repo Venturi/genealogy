@@ -10,7 +10,7 @@
 <body>
 	<div class="titulo_principal">{% block section_title %}
 		Bienvenido, {{ request.user.first_name.title }} {{ request.user.last_name.title }}{% endblock %}
-		<input id="logout_button" type="submit" value="" onclick="location.href='/logout/'"/>
+		<input id="logout_button" type="submit" value="" onclick="location.href='{% url 'logout' %}'"/>
 	</div>
 	<div class="cuerpo_seccion">
 		{% block content %}{% endblock %}
