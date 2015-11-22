@@ -6,7 +6,7 @@
 <div class="cabecera_seccion">
 	<h1 class="titulo_seccion">Miembros de la familia {{ family.family_name }}</h1>
 	<input type="button" onclick="location.href='{% url 'family:family' %}'" value="Familias"/>
-	<input onclick="location.href='{% url 'family:add_member' family.id %}'" type="submit" value="Añadir miembro"/>
+	<input type="submit" onclick="location.href='{% url 'family:add_member' family.id %}'" value="Añadir miembro"/>
 	<input type="button" onclick="location.href='{% url 'family:delete_family' family.id %}'" value="Eliminar Familia"/>
 	{% if members %}
 		<ul>

@@ -4,7 +4,7 @@
 
 {% block content %}
 
-<div class="titulo_seccion">Lista de familias registradas</div>
+<div class="titulo_seccion">Familias registradas por {{ request.user.first_name.title }} {{ request.user.last_name.title }}</div>
 <input onclick="location.href='{% url 'family:add_family' %}'"  type="submit" value="Nueva Familia"/>
 {% if family_list %}
     <ul>

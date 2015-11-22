@@ -7,7 +7,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate,login,logout
 
 #Importamos nuestros modelos de datos
-from .models import Family, Member, LoginForm, RegUser
+from .models import Family, Member, RegUser
 
 #reCaptcha
 from captcha.fields import ReCaptchaField
@@ -58,10 +58,6 @@ class FamilyCreate(CreateView):
 	template_name = 'family/create_family.html'
 	fields = '__all__'
 	success_url = '/family/'
-	def get_context_data(self, **kwargs):
-		context = super(Family, self).get_context_data(**kwargs)
-		context['family_name'] = self.family_name
-		return context
 
 class FamilyUpdate(UpdateView):
 	model = Family
@@ -77,14 +73,22 @@ class MemberCreate(CreateView):
 	model = Member
 	fam_id = Member.member_family_id
 	template_name = 'family/create_member.html'
-	fields = '__all__'
+	fields = ['member_name','member_surname','member_sex','member_profile_image','member_birth','member_rip','member_email']
 	success_url = '/family/'
+	def get_context_data(self, **kwargs):
+		context = super(MemberCreate, self).get_context_data(**kwargs)
+		context['family_data'] = self.object
+		return context
 
 class MemberUpdate(UpdateView):
 	model = Member
 	template_name = 'family/edit_member.html'
 	fields = ['member_name','member_surname','member_sex','member_profile_image','member_birth','member_rip','member_email']
 	success_url = '/family/'
+	def get_context_data(self, **kwargs):
+		context = super(MemberUpdate, self).get_context_data(**kwargs)
+		context['member_data'] = self.object
+		return context
 
 class MemberDelete(DeleteView):
 	model = Member

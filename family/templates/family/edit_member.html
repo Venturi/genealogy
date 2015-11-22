@@ -5,7 +5,7 @@
 {% block content %}
 <div class="titulo_seccion">Editando ficha de {{ form.member_name.value }} {{ form.member_surname.value }}</div>
 <form action="" method="post">
-	<div class="button_form"><input type="submit" value="Guardar cambios" /><input type="button" value="Cancelar" onclick="" /></div><br>
+	<div class="button_form"><input type="submit" value="Guardar cambios" /><input type="button" value="Cancelar" onclick="location.href='{% url 'family:member' member_data.id %}'" /></div><br>
 	{% csrf_token %}
 	<table>
 		{{ form.as_table }}
