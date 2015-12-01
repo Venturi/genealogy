@@ -5,12 +5,17 @@
 {% block section_title %}Registro de nuevo usuario{% endblock %}
 
 {% block content %}
+	{% if registered %}
+		<strong>¡Muchas gracias por registrarse!</strong>
+		<a href="/rango/">Volver a la página de inicio.</a><br/>
+	{% else %}
 	<div class="registro">
 		<div class="titulo_seccion">Introduzca sus datos</div><br>
 		<form action="{{ RegUser.save }}" method="POST">
 			{% csrf_token %}
 			<table id="register_form">
-				{{ new_user.as_table }}
+				{{ user_form.as_table }}
+				{{ profile_form.as_table }}
 			</table>
 			<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 			<br>
@@ -19,4 +24,5 @@
 			</div><br>
 		</form>
 	</div>
+	{% endif %}
 {% endblock %}
