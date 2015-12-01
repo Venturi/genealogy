@@ -2,6 +2,7 @@
 
 from django.db import models
 from django import forms
+from django.contrib.auth.models import User
 
 #Modelos de datos
 class Family(models.Model):
@@ -31,3 +32,16 @@ class RegUser(forms.Form):
 	reg_password = forms.CharField(label='Contraseña',min_length=8,max_length=32, widget=forms.PasswordInput) #Password usuario nuevo
 	reg_repassword = forms.CharField(label='Vuelva a introducirla',min_length=8,max_length=32, widget=forms.PasswordInput)
 	reg_email = forms.EmailField(label='E-Mail') #Email usuario nuevo
+	reg_firstname = forms.CharField(label='Nombre', max_length=100) #Nombre del usuario nuevo
+	reg_surname = forms.CharField(label='Apellidos',max_length=200) #Apellidos del usuario nuevo
+	reg_birth = forms.DateField(label='Fecha de nacimiento') #Fecha de nacimiento
+	reg_profile_image = models.ImageField('Foto de perfil',null=True,blank=True)
+	class Meta:
+		model = User
+		fields = '__all__'
+	def save(self,commit=False):
+		user = super(RegUser, self).save(commit=False)
+		user.set_password(self.cleaned_data["reg_password"])
+		if commit:
+			user.save()
+		return user

@@ -7,7 +7,7 @@
 {% block content %}
 	<div class="registro">
 		<div class="titulo_seccion">Introduzca sus datos</div><br>
-		<form action="" method="POST">
+		<form action="{{ RegUser.save }}" method="POST">
 			{% csrf_token %}
 			<table id="register_form">
 				{{ new_user.as_table }}
