@@ -25,6 +25,7 @@ class Member(models.Model):
 
 	def __str__(self):
 		return self.member_surname+", "+self.member_name
+
 #Perfil de usuario
 class UserProfile(models.Model):
 	user = models.OneToOneField(User)

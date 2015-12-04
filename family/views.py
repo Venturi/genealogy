@@ -74,6 +74,18 @@ def register(request):
 			'register.html',
 			{'user_form': user_form, 'profile_form': profile_form, 'registered': registered} )
 
+#Edición del Usuario para agregar o modificar datos de su perfil
+class UserUpdate(UpdateView):
+	model = UserProfile
+	template_name = 'family/edit_member.html'
+	fields = ['member_name','member_surname','member_sex','member_profile_image','member_birth','member_rip','member_email']
+	success_url = '/family/'
+	def get_context_data(self, **kwargs):
+		context = super(MemberUpdate, self).get_context_data(**kwargs)
+		context['member_data'] = self.object
+		return context
+
+
 class FamilyCreate(CreateView):
 	model = Family
 	template_name = 'family/create_family.html'

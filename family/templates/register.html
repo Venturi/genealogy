@@ -6,7 +6,8 @@
 
 {% block content %}
 	{% if registered %}
-		<strong>¡Muchas gracias por registrarse!</strong>
+		<strong>¡Muchas gracias por registrarse!</strong><br>
+		<strong>No olvides activar tu cuenta con el enlace enviado a la dirección de correo que proporcionaste en el registro.</strong><br>
 		<a href="/">Volver a la página de inicio.</a><br/>
 	{% else %}
 	<div class="registro">
@@ -15,7 +16,6 @@
 			{% csrf_token %}
 			<table id="register_form">
 				{{ user_form.as_table }}
-				{{ profile_form.as_table }}
 			</table>
 			<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 			<br>
