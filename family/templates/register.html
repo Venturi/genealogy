@@ -7,11 +7,11 @@
 {% block content %}
 	{% if registered %}
 		<strong>¡Muchas gracias por registrarse!</strong>
-		<a href="/rango/">Volver a la página de inicio.</a><br/>
+		<a href="/">Volver a la página de inicio.</a><br/>
 	{% else %}
 	<div class="registro">
 		<div class="titulo_seccion">Introduzca sus datos</div><br>
-		<form action="{{ RegUser.save }}" method="POST">
+		<form action="" method="POST">
 			{% csrf_token %}
 			<table id="register_form">
 				{{ user_form.as_table }}

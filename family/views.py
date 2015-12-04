@@ -7,7 +7,8 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate,login,logout
 
 #Importamos nuestros modelos de datos
-from .models import Family, Member, RegUser
+from .models import Family, Member, UserProfile
+from .forms import UserForm, UserProfileForm
 
 #reCaptcha
 from captcha.fields import ReCaptchaField
@@ -48,8 +49,6 @@ def reqMember(request, mem_id):
 	family_data = get_object_or_404(Family, pk=fam_id)
 	context = {'member_data':member_data,'family_data':family_data}
 	return render(request, 'family/viewFamMember.html',context)
-	
-from rango.forms import UserForm, UserProfileForm
 
 def register(request):
 	registered = False
@@ -72,12 +71,8 @@ def register(request):
 		user_form = UserForm()
 		profile_form = UserProfileForm()
 	return render(request,
-			'family/register.html',
+			'register.html',
 			{'user_form': user_form, 'profile_form': profile_form, 'registered': registered} )
-
-class RegUserForm(RegUser):
-	model = RegUser
-	fields = '__all__'
 
 class FamilyCreate(CreateView):
 	model = Family
