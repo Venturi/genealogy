@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 
+from django.utils.translation import ugettext as _
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
@@ -87,9 +89,9 @@ DATABASES = {
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es-es'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Madrid'
 
 USE_I18N = True
 
@@ -97,6 +99,10 @@ USE_L10N = True
 
 USE_TZ = True
 
+LANGUAGES = [
+	('es', _('Spanish')),
+	('en', _('English')),
+]
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
@@ -107,6 +113,8 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 LOGIN_URL = '/'
+
+EMAIL_BACKEND ='django.core.mail.backends.console.EmailBackend'
 
 #reCaptcha
 RECAPTCHA_PUBLIC_KEY = '6Lezo84SAAAAAK9O-cgYF9sh-Gc4adwj_Mj2o86e'
