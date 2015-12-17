@@ -3,7 +3,7 @@
 {% block title %}Nuevo miembro de la familia - Genealogy{% endblock %}
 
 {% block content %}
-<div class="titulo_seccion">Nuevo miembro de la familia {{ request.GET }}</div>
+<div class="titulo_seccion">Nuevo miembro de la familia {{ family_data }}</div>
 <form action="." method="post">
 	<div class="button_form"><input type="submit" value="Crear" /><input type="button" value="Cancelar" onclick="location.href={% url 'family:family' %}" /></div><br>
 	{% csrf_token %}
