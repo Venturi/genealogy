@@ -135,3 +135,8 @@ RECAPTCHA_USE_SSL = True
 #)
 
 #BCRYPT_ENABLED = True
+
+AUTHENTICATION_BACKENDS = (
+	'django_auth_ldap.backend.LDAPBackend',
+	'django.contrib.auth.backends.ModelBackend',
+)
