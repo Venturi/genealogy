@@ -136,6 +136,14 @@ RECAPTCHA_USE_SSL = True
 
 #BCRYPT_ENABLED = True
 
+import ldap
+from django_auth_ldap.config import LDAPSearch
+
+AUTH_LDAP_BIND_DN = ""
+AUTH_LDAP_BIND_PASSWORD = ""
+AUTH_LDAP_USER_SEARCH = LDAPSearch("ou=users,dc=example,dc=com",
+ldap.SCOPE_SUBTREE, "(uid=%(user)s)")
+
 AUTHENTICATION_BACKENDS = (
 	'django_auth_ldap.backend.LDAPBackend',
 	'django.contrib.auth.backends.ModelBackend',
